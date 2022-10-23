@@ -1,0 +1,84 @@
+using System;
+
+namespace _02.SummerOutfit
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            const string MORNING = "Morning";
+            const string AFTERNOON = "Afternoon";
+            const string EVENING = "Evening";
+
+            const string _Sweatshirt = "Sweatshirt";
+            const string _Shirt = "Shirt";
+            const string _TShirt = "T-Shirt";
+            const string _SwimSuit = "Swim Suit";
+
+            const string _Sneakers = "Sneakers";
+            const string _Moccasins = "Moccasins";
+            const string _Sandals = "Sandals";
+            const string _Barefoot = "Barefoot";
+
+            double degrees = double.Parse(Console.ReadLine());
+            string dayTime = Console.ReadLine();
+            string outfit = " ";
+            string shoes = " ";
+
+            if (degrees >= 10 && degrees <= 18)
+            {
+                if (dayTime == MORNING)
+                {
+                    outfit = _Sweatshirt;
+                    shoes = _Sneakers;
+
+                }
+                else if (dayTime == AFTERNOON || dayTime == EVENING)
+                {
+                    outfit = _Shirt;
+                    shoes = _Moccasins;
+                }
+
+            }
+            else if (degrees > 18 && degrees <= 24)
+            {
+                if (dayTime == MORNING)
+                {
+                    outfit = _Shirt;
+                    shoes = _Moccasins;
+                }
+                else if (dayTime == AFTERNOON)
+                {
+                    outfit = _TShirt;
+                    shoes = _Sandals;
+                }
+                else if (dayTime == EVENING)
+                {
+                    outfit = _Shirt;
+                    shoes = _Moccasins;
+                }
+            }
+            else if (degrees >= 25)
+            {
+                if (dayTime == MORNING)
+                {
+                    outfit = _TShirt;
+                    shoes = _Sandals;
+
+                }
+                else if (dayTime == AFTERNOON)
+                {
+                    outfit = _SwimSuit;
+                    shoes = _Barefoot;
+                }
+                else if (dayTime == EVENING)
+                {
+                    outfit = _Shirt;
+                    shoes = _Moccasins;
+                }
+            }
+
+            Console.WriteLine($"It's {degrees} degrees, get your {outfit} and {shoes}.");
+        }
+    }
+}
